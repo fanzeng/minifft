@@ -1,0 +1,11 @@
+{
+  "name": "minifft",
+  "version": "1.0.0",
+  "description": "simple fast fourier transform in JS",
+  "main": "minifft.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}

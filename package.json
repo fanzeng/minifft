@@ -4,8 +4,9 @@
   "description": "simple fast fourier transform in JS",
   "main": "minifft.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node minifft-spec.js"
   },
+  "type": "module",
   "author": "",
   "license": "ISC"
 }

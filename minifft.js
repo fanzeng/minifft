@@ -9,7 +9,7 @@ class ComplexNumber {
     }
     else {
       return Math.round(this.real*100.)/100.
-        + ' + j '
+        + '+j'
         + Math.round(this.imag*100.)/100.;
     }
   }
@@ -25,9 +25,15 @@ class ComplexNumber {
   mag(c) {
     return Math.sqrt(this.real*this.real + this.imag*this.imag);
   }
+  // c: The other complex number to compare with
+  // ator: Absolute tolerance
+  // convert to absolute tolerance if that's what you need
+  eq(c, ator) {
+    return Math.abs(this.real - c.real) < ator && Math.abs(this.imag - c.imag) < ator;
+  }
 }
 
-class miniFFT {
+export default class miniFFT {
   constructor(size) {
     this.size = size;
     this.weight = Array.from(Array(size).keys()).map(
@@ -37,7 +43,7 @@ class miniFFT {
       }
     );
   }
-  
+
   toComplex(arr) {
     return arr.map(r => new ComplexNumber(r));
   }
@@ -77,6 +83,7 @@ class miniFFT {
     let res = this.fft(arr, this.weight);
     return res;
   }
+
   toMagnitude(arr) {
     return arr.map(c => c instanceof ComplexNumber ? c.mag() : Math.abs(c));
   }
@@ -84,13 +91,10 @@ class miniFFT {
   getMax(arr) {
     return Math.max(...this.toMagnitude(arr));
   }
-  
+
   getArgmax(arr) {
     return this.toMagnitude(arr).map((value, index) => [value, index])
       .reduce((prev, curr) => curr[0] > prev[0] ? curr : prev)[1];
   }
 }
-
-// fft = new miniFFT(8);
-// let arr = [0,0,2,3,4,0,0,0];
-// fft.analyze(arr);
+export { ComplexNumber, miniFFT };

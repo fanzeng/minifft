@@ -17,6 +17,7 @@ const eps = 1e-8;
 res.map((c, i) => {
   if (!c.eq(ans[i], eps)) {
     console.error(`Test failed: ${c} is not equal to ${ans[i]}.`);
+    process.exit(1);
   }
 });
 console.log('All tests finished');

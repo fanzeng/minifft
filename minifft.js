@@ -25,6 +25,12 @@ class ComplexNumber {
   mag(c) {
     return Math.sqrt(this.real*this.real + this.imag*this.imag);
   }
+  // c: The other complex number to compare with
+  // ator: Absolute tolerance
+  // convert to absolute tolerance if that's what you need
+  eq(c, ator) {
+    return Math.abs(this.real - c.real) < ator && Math.abs(this.imag - c.imag) < ator;
+  }
 }
 
 export default class miniFFT {
@@ -91,3 +97,4 @@ export default class miniFFT {
       .reduce((prev, curr) => curr[0] > prev[0] ? curr : prev)[1];
   }
 }
+export { ComplexNumber, miniFFT };

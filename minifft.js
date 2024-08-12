@@ -26,8 +26,8 @@ class ComplexNumber {
     return Math.sqrt(this.real*this.real + this.imag*this.imag);
   }
   // c: The other complex number to compare with
-  // ator: Absolute tolerance
-  // convert to absolute tolerance if that's what you need
+  // ator: Absolute tolerance for either the real or imag part to be equal
+  // if you need relative tolerance, please convert it to absolute tolerance before calling eq()
   eq(c, ator) {
     return Math.abs(this.real - c.real) < ator && Math.abs(this.imag - c.imag) < ator;
   }

@@ -1,6 +1,6 @@
 {
   "name": "minifft",
-  "version": "1.0.0",
+  "version": "1.0.3",
   "description": "simple fast fourier transform in JS",
   "main": "minifft.js",
   "scripts": {

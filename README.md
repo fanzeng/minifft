@@ -1,7 +1,7 @@
 minifft
 
-+ Mini implementation of Fast Fourier Transform
++ Mini implementation of Fast Fourier Transform (FFT)
 + Easy to read code
-+ No dependcies
++ No external dependencies
 
-npm page: https://www.npmjs.com/package/minifft
+(npm page: https://www.npmjs.com/package/minifft)

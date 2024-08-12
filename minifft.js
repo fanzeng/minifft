@@ -9,7 +9,7 @@ class ComplexNumber {
     }
     else {
       return Math.round(this.real*100.)/100.
-        + ' + j '
+        + '+j'
         + Math.round(this.imag*100.)/100.;
     }
   }
@@ -37,7 +37,7 @@ export default class miniFFT {
       }
     );
   }
-  
+
   toComplex(arr) {
     return arr.map(r => new ComplexNumber(r));
   }
@@ -91,5 +91,3 @@ export default class miniFFT {
       .reduce((prev, curr) => curr[0] > prev[0] ? curr : prev)[1];
   }
 }
-
-// export { analyze };

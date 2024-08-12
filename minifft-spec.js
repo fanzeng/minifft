@@ -4,7 +4,7 @@ let arr = [0,0,2,3,4,0,0,0];
 const res = fft.analyze(arr);
 
 const ans = [
-  new ComplexNumber(9, 1),
+  new ComplexNumber(9, 0),
   new ComplexNumber(-6.121320343559642,  -4.1213203435596455),
   new ComplexNumber(1.9999999999999996,  2.9999999999999996),
   new ComplexNumber(-1.8786796564403567, -0.12132034355964372),
